@@ -3,9 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <script src="main.js" defer></script>
-  <title>Music Search</title>
+  <title>iTunes Music Search</title>
 </head>
+
 <body>
+
+  <div id="music-search">
+
+    <form method="post" action="https://itunes.apple.com/search?term=fleetwood+mac&limit=25{searchDiv}" id="search-form">
+      <div class="input-field">
+        <label for="search-bar"></label>
+          <input
+            type="search"
+            name="search-input"
+            id="search-input"
+            placeholder="Search for Artists"
+            required
+          />
+      </div>
+      <div class ="input-field">
+        <input type="submit" value="Search"/>
+      </div>
+    </form>
+
+  </div>
+
 </body>
+
+
 </html>
