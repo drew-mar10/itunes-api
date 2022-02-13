@@ -16,27 +16,43 @@
 
 <body>
 
-  <div id="music-search">
+  <h1>Find your Favorite Songs</h1>
 
-    <form method="post" action="https://itunes.apple.com/search?term=fleetwood+mac&limit=25{searchDiv}" id="search-form">
-      <div class="input-field">
-        <label for="search-bar"></label>
-          <input
-            type="search"
-            name="search-input"
-            id="search-input"
+<div id="music-search">
+
+<!--Audio play-->
+<div class="audio-section">
+  <h3 id="now-playing">Now Playing</h3>
+  <audio class="audio-class" id="audio-player" controls autoplay></audio>
+</div>
+
+<!--Search Bar-->
+<form action="/" method="get" id="search-form">
+  <div class="form">
+      <label for="search-bar"></label>
+        <input class="inputInput"
+            type="text"
+            id="music-search"
             placeholder="Search for Artists"
-            required
-          />
-      </div>
-      <div class ="input-field">
-        <input type="submit" value="Search"/>
-      </div>
-    </form>
-
+            required>
+    </div>
+    
+    <div class ="button-field">
+        <button type="submit" value="search" name="searchButton" class="searchButt">
+          <h4>Search</h4>
+        </button>
   </div>
+</form>
+
+<!--Search Results-->
+<div class="searchResults">
+  <h2 id="resultsId">Results: </h2>
+</div>
+
+<div class="resultsContainer">
+</div>
+
+</div>
 
 </body>
-
-
 </html>
