@@ -21,51 +21,49 @@
 
 //"https://itunes.apple.com/search?parameterkeyvalue&callback="{name of JavaScript function in webpage}"/>
 
+const url = 'https://proxy-itunes-api.glitch.me/search?term=fleetwood+mac'
 
-const form = document.getElementById('search-form')
-let url = "https://itunes.apple.com/search?term="
-const musicSearch = document.getElementById('music-search')
-const input = document.getElementsByClassName('inputInput')
+document.querySelector("#input").focus();
 
-form.addEventListener("submit", function (event) {
+const searchForm = document.querySelector('#form')
+console.log(searchForm)
+
+searchForm.addEventListener('submit', function (event) {
     event.preventDefault()
-    console.log("searched!")
-    console.log('value is: ', event.target)
+        console.log('submit')
+
+    fetch(url)
+    .then(function(response){
+    console.log(response)
+    return response.json()
+    })
+    .then(function(data){
+    console.log(data)
+
+    document.querySelector('.songProfile').innerHTML += `<img src=${data.results[0].artworkUrl100}/>`
+    
+    document.querySelector('#audio').innerHTML += `<audio controls src=${data.results[0].previewUrl}/>`
+    
+})
 })
 
-// fetch('https://itunes.apple.com/search?term=fleetwood+mac&limit=25')
-//     .then(function(result){
-//         console.log(result)
-//         return result.json()
+//     const searchBarString = document.getElementById('musicSearchBar').value
+//         console.log(searchBarString);
+//     document.getElementById('resultsId').innerHTML = "Results: '" + searchBarString + "' ";
+
+//     const searchFormData = new FormData(event.target);
+//         console.log(searchFormData);
+//     const musicString = new URLSearchParams(searchFormData).toString('');
+//         console.log(musicString);
+
+
+//     let url = (`https://itunes.apple.com/search?${musicString}&limit=25`)
+//     console.log(url)
+//     fetch(url)
+//     .then(function(response){
+//     console.log(response)
+//     return response.json()
 // })
-//     .then (function(data){
+//     .then(function(data){
 //         console.log(data)
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-// fetch('https://itunes.apple.com/search?term=fleetwood+mac&limit=25')
-//     .then((result) => result.json())
-//     .then((data) => {
-
-//     document.querySelector('#searchDiv').innerHTML +=
-
-//     `<h2>${data.artistId}</h2>
-
-//     <div class="selectedSong">
-//         <p>img artwork src=${artworkUrl30}>
-//         <p>Song Title: ${data.trackName}</p>
-//         <p>Band Name: ${data.artistName}</p>`
-
-
-//     return data.artistId
 //     })

@@ -22,23 +22,23 @@
 
 <!--Audio play-->
 <div class="audio-section">
-  <h3 id="now-playing">Now Playing</h3>
-  <audio class="audio-class" id="audio-player" controls autoplay></audio>
+  <figure>
+    <figcaption id="now-playing">Now Playing</figcaption>
+  <audio class="audio-class" id="audio-player" controls autoplay src=""></audio>
+</figure>
 </div>
 
 <!--Search Bar-->
-<form action="/" method="get" id="search-form">
-  <div class="form">
-      <label for="search-bar"></label>
-        <input class="inputInput"
+<form action="/" method="get" id="form">
+      <label for="musicSearchForm"></label>
+        <input name="musicSearchForm"
             type="text"
-            id="music-search"
+            id="input"
             placeholder="Search for Artists"
-            required>
-    </div>
-    
-    <div class ="button-field">
-        <button type="submit" value="search" name="searchButton" class="searchButt">
+            required/>
+
+    <div class ="buttonField">
+        <button type="submit" value="iTunes search">
           <h4>Search</h4>
         </button>
   </div>
@@ -46,13 +46,13 @@
 
 <!--Search Results-->
 <div class="searchResults">
-  <h2 id="resultsId">Results: </h2>
+  <div class="songProfile" src=" " id="songProfile"></div>
+  <div class="albumArt"></div>
+  <h2 songTitle></h2>
+  <h2 Artist></h2>
+  
 </div>
 
-<div class="resultsContainer">
 </div>
-
-</div>
-
 </body>
 </html>
