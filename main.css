@@ -5,6 +5,13 @@ body{
     max-width: auto;
 }
 
+.audio{
+    align-self: center;
+}
+.audio-class{
+    align-content: center;
+}
+
 h1{ 
     text-align: justify;
     color: white;
@@ -63,29 +70,19 @@ h1{
     }
 }
 
-#music-search{
-
-}
-
-.audio{
-    align-self: center;
-}
-.audio-class{
-    align-content: center;
-}
-
 #formId{
     margin-bottom: 10px;
 }
 
 
 #songCollection{
-    display: inline-flex;
+    display: flex;
     flex-direction:row;
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 15pt;
     border-top: 35%;
+    border-bottom: 35%;
     padding-left: 15px;
     padding-right: 15px;
     line-height: 1px;
@@ -108,14 +105,11 @@ h1{
     padding: 2px;
 }
 
-
-button{
-
+.p{
+    letter-spacing: 2%;
 }
 
-songCollection{
-    display: inline-flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+h4{
+    font-size: 10pt;
+    text-decoration: underline;
 }

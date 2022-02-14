@@ -49,7 +49,7 @@ searchForm.addEventListener('submit', function(event) {
             songProfile.innerHTML = `
             <img src="${result.artworkUrl100}">
             <p>${result.trackName}</p>
-            <p>${result.artistName}</p>
+            <h4>${result.artistName}</h4>
             <audio controls src="${result.previewUrl}"></audio>
             `
             songBox.appendChild(songProfile)
