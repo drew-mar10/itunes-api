@@ -1,4 +1,121 @@
 body{
-    margin: 15pt;
-    background-color: papayawhip;
+    background-color: rgba(176, 211, 165, 0.479);
+    font-family: 'Permanent Marker', small;
+    background: #f3f3f3;
+    max-width: auto;
+}
+
+h1{ 
+    text-align: justify;
+    color: white;
+    text-transform: uppercase;
+    padding: 1px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40pt;
+    position: relative;
+    background: black;
+}
+    h1::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -50px;
+        width: 600px;
+        margin-left: -300px;
+        margin-top: -220px;
+        height: 600px;
+        background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
+        z-index: -1;
+}
+    h1 a {
+        background: black;
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        letter-spacing: 30px;
+        color: white;
+}
+
+
+
+.sketchy {
+    padding: 4rem 8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    font-size: 2.5rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+    
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
+}
+
+#music-search{
+
+}
+
+.audio{
+    align-self: center;
+}
+.audio-class{
+    align-content: center;
+}
+
+#formId{
+    margin-bottom: 10px;
+}
+
+
+#songCollection{
+    display: inline-flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 15pt;
+    border-top: 35%;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1px;
+}
+
+.song-profile{
+    margin-left: 2pt;
+    margin-right: 2pt;
+    align-items: center;
+}
+.img{
+    width: 50%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.trackName{
+    text-align: left;
+    font-size: 10pt;
+    padding: 2px;
+}
+
+
+button{
+
+}
+
+songCollection{
+    display: inline-flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

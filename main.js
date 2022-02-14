@@ -21,31 +21,54 @@
 
 //"https://itunes.apple.com/search?parameterkeyvalue&callback="{name of JavaScript function in webpage}"/>
 
-const url = 'https://proxy-itunes-api.glitch.me/search?term=fleetwood+mac'
+const url = 'https://proxy-itunes-api.glitch.me/search?term='
+const searchForm = document.querySelector('#formId')
+let searchValue = searchForm.value
+const search = document.querySelector('#searchId')
 
-document.querySelector("#input").focus();
 
-const searchForm = document.querySelector('#form')
-console.log(searchForm)
 
-searchForm.addEventListener('submit', function (event) {
+console.log(searchForm);
+
+document.querySelector("input").focus();
+
+searchForm.addEventListener('submit', function(event) {
     event.preventDefault()
-        console.log('submit')
 
-    fetch(url)
-    .then(function(response){
-    console.log(response)
-    return response.json()
-    })
-    .then(function(data){
-    console.log(data)
+    fetch(url + search.value + "&media=music&limit=20")
+    .then((result) => result.json())
+    .then((data => {
+        let songBox = document.getElementById('songCollection')
+        console.log(data)
+        let results = data.results
 
-    document.querySelector('.songProfile').innerHTML += `<img src=${data.results[0].artworkUrl100}/>`
-    
-    document.querySelector('#audio').innerHTML += `<audio controls src=${data.results[0].previewUrl}/>`
-    
+        for(let result of results) {
+            const songProfile = document.createElement('div')
+            songProfile.classList.add('song-profile')
+
+            songProfile.innerHTML = `
+            <img src="${result.artworkUrl100}">
+            <p>${result.trackName}</p>
+            <p>${result.artistName}</p>
+            <audio controls src="${result.previewUrl}"></audio>
+            `
+            songBox.appendChild(songProfile)
+        }
+    }))
 })
-})
+        
+    //     function(response){
+    // console.log(response)
+    // return response.json()
+    // })
+    // .then(function(data){
+    // console.log(data)
+
+    // document.querySelector('.songProfile').innerHTML += `<img src=${data.results[0].artworkUrl100}/>`
+    
+    // document.querySelector('#audio').innerHTML += `<audio controls src=${data.results[0].previewUrl}/>`
+    
+
 
 //     const searchBarString = document.getElementById('musicSearchBar').value
 //         console.log(searchBarString);
@@ -66,4 +89,4 @@ searchForm.addEventListener('submit', function (event) {
 // })
 //     .then(function(data){
 //         console.log(data)
-//     })
+//    

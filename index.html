@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -14,43 +15,44 @@
   <title>iTunes Music Search</title>
 </head>
 
-<body>
+<body class="sketchy">
 
-  <h1>Find your Favorite Songs</h1>
+  <h1><a href="#0">Really Awesome Music Site</a></h1>
 
 <div id="music-search">
+  
+<hr class="rounded">
 
-<!--Audio play-->
-<div class="audio-section">
-  <figure>
-    <figcaption id="now-playing">Now Playing</figcaption>
-  <audio class="audio-class" id="audio-player" controls autoplay src=""></audio>
-</figure>
+<!--Audio-->
+<div class="audio">
+<audio class="audioClass" controls src>
+  Your browser does not support the <code>audio</code> element.
+  </audio>
 </div>
 
+  <hr class="rounded">
+
 <!--Search Bar-->
-<form action="/" method="get" id="form">
+<div class="searchDiv">
+  <form action="/" method="get" id="formId">
       <label for="musicSearchForm"></label>
         <input name="musicSearchForm"
             type="text"
-            id="input"
+            id="searchId"
             placeholder="Search for Artists"
             required/>
 
-    <div class ="buttonField">
-        <button type="submit" value="iTunes search">
-          <h4>Search</h4>
+
+        <button class="button is-black" type="submit" value="iTunes search">
+          <p>Search</p>
         </button>
-  </div>
+</div>
 </form>
 
+<hr class="rounded">
+
 <!--Search Results-->
-<div class="searchResults">
-  <div class="songProfile" src=" " id="songProfile"></div>
-  <div class="albumArt"></div>
-  <h2 songTitle></h2>
-  <h2 Artist></h2>
-  
+<div id="songCollection" id="tv">
 </div>
 
 </div>
