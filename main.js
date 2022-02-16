@@ -27,20 +27,22 @@ let searchValue = searchForm.value
 const search = document.querySelector('#searchId')
 
 
-
 console.log(searchForm);
 
 document.querySelector("input").focus();
 
-searchForm.addEventListener('submit', function(event) {
+searchForm.addEventListener('click', function(event) {
     event.preventDefault()
+    console.log('click')
 
     fetch(url + search.value + "&media=music&limit=20")
-    .then((result) => result.json())
+    .then(result => result.json())
     .then((data => {
         let songBox = document.getElementById('songCollection')
-        console.log(data)
         let results = data.results
+        console.log(data)
+        
+
 
         for(let result of results) {
             const songProfile = document.createElement('div')
@@ -52,7 +54,7 @@ searchForm.addEventListener('submit', function(event) {
             <h4>${result.artistName}</h4>
             <audio controls src="${result.previewUrl}"></audio>
             `
-            songBox.appendChild(songProfile)
+            songBox.append(songProfile)
         }
     }))
 })

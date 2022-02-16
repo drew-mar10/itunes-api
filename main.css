@@ -85,7 +85,7 @@ h1{
     border-bottom: 35%;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 1px;
+    line-height: auto;
 }
 
 .song-profile{

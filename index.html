@@ -38,12 +38,12 @@
       <label for="musicSearchForm"></label>
         <input name="musicSearchForm"
             type="text"
+            onfocus="this.value =''" 
             id="searchId"
             placeholder="Search for Artists"
+            value="reset form"
             required/>
-
-
-        <button class="button is-black" type="submit" value="iTunes search">
+        <button class="button is-black" type="submit" value="reset form" on click="reset">
           <p>Search</p>
         </button>
 </div>
