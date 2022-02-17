@@ -57,24 +57,24 @@ searchForm.addEventListener('click', function(event) {
         }
     }))
 })
-    fetch(url + search.value + "&media=music&limit=15")
-    .then(result => result.json())
-    .then((data => {
-        let audio = document.getElementById('audio')
-        let results = data.results
-        console.log(data)
+    // fetch(url + search.value + "&media=music&limit=15")
+    // .then(result => result.json())
+    // .then((data => {
+    //     let audio = document.getElementById('audio')
+    //     let results = data.results
+    //     console.log(data)
         
 
-        for(let result of results) {
-            const audioPlayer = document.createElement('div')
-            audioPlayer.classList.add('audio-player')
+    //     for(let result of results) {
+    //         const audioPlayer = document.createElement('div')
+    //         audioPlayer.classList.add('audio-player')
 
-            audioPlayer.innerHTML = `
-            <audio controls src="${result.previewUrl}"></audio>
-            `
-            audio.append(audioPlayer)
-        }
-    }))
+    //         audioPlayer.innerHTML = `
+    //         <audio controls src="${result.previewUrl}"></audio>
+    //         `
+    //         audio.append(audioPlayer)
+    //     }
+    // }))
     //     function(response){
     // console.log(response)
     // return response.json()
