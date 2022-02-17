@@ -102,6 +102,8 @@ button{
     width: 50%;
     max-height: 100%;
     object-fit: contain;
+    border: white;
+    border-width: 6px;
 }
 
 .trackName{
