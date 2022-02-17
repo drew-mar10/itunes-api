@@ -35,14 +35,13 @@ searchForm.addEventListener('click', function(event) {
     event.preventDefault()
     console.log('click')
 
-    fetch(url + search.value + "&media=music&limit=20")
+    fetch(url + search.value + "&media=music&limit=15")
     .then(result => result.json())
     .then((data => {
         let songBox = document.getElementById('songCollection')
         let results = data.results
         console.log(data)
         
-
 
         for(let result of results) {
             const songProfile = document.createElement('div')
@@ -54,11 +53,28 @@ searchForm.addEventListener('click', function(event) {
             <h4>${result.artistName}</h4>
             <audio controls src="${result.previewUrl}"></audio>
             `
-            songBox.append(songProfile)
+            songBox.prepend(songProfile)
         }
     }))
 })
+    fetch(url + search.value + "&media=music&limit=15")
+    .then(result => result.json())
+    .then((data => {
+        let audio = document.getElementById('audio')
+        let results = data.results
+        console.log(data)
         
+
+        for(let result of results) {
+            const audioPlayer = document.createElement('div')
+            audioPlayer.classList.add('audio-player')
+
+            audioPlayer.innerHTML = `
+            <audio controls src="${result.previewUrl}"></audio>
+            `
+            audio.append(audioPlayer)
+        }
+    }))
     //     function(response){
     // console.log(response)
     // return response.json()
